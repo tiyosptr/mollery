@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "839430557537",
+    "firebase_url": "https://kel1-8ae2e-default-rtdb.firebaseio.com",
+    "project_id": "kel1-8ae2e",
+    "storage_bucket": "kel1-8ae2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839430557537:android:97d0a4142deb2ca0347f20",
+        "android_client_info": {
+          "package_name": "com.example.tesflut"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7iHNTMs2RjzGpgTIsTJmjKzrUXehQ0Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
