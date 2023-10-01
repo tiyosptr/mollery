@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
 
 class RelTimeData extends StatelessWidget {
   RelTimeData({super.key});
-  final ref = FirebaseDatabase.instance.ref('Paket');
+  Query dbRef = FirebaseDatabase.instance.ref().child('Students');
+  DatabaseReference reference =
+      FirebaseDatabase.instance.ref().child('Students');
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +38,17 @@ class RelTimeData extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Realtime Database"),
       ),
-      body: Column(
-        children: [
-          Expanded(
+      body: Column(children: [
+        Expanded(
             child: FirebaseAnimatedList(
-              query: ref,
-              itemBuilder: (context, snapshot, animation, index) {
-                return ListTile(
-                  title: Text(snapshot.child('deskripsi').value.toString()),
-                );
-              },
-            ),
-          )
-        ],
-      ),
+          query: dbRef,
+          itemBuilder: ((context, snapshot, animation, index) {
+            return ListTile(
+              title: Text(snapshot.child('deskripsi').value.toString()),
+            );
+          }),
+        ))
+      ]),
     );
   }
 }
